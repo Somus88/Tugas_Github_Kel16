@@ -45,3 +45,27 @@ func kenaRazia(tanggal int, data []Data) []Pelanggaran {
 		tanggalGanjil := tanggal%2 != 0
 		platGanjil := angkaTerakhir%2 != 0
 		pelanggaranN := 0
+
+
+
+
+		for _, rute := range kendaraan.Rute {
+			for _, ruteGG := range ruteGanjilGenap {
+				if rute == ruteGG {
+					if tanggalGanjil != platGanjil {
+						pelanggaranN++
+					}
+				}
+			}
+		}
+
+		if pelanggaranN > 0 {
+			hasil = append(hasil, Pelanggaran{
+				Name:   kendaraan.Nama,
+				Tilang: pelanggaranN,
+			})
+		}
+	}
+
+	return hasil
+}
