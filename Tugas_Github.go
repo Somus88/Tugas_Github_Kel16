@@ -69,3 +69,37 @@ func kenaRazia(tanggal int, data []Data) []Pelanggaran {
 
 	return hasil
 }
+
+func main() {
+	data := []Data{
+		{
+			Nama: "Denver",
+			Plat: "B 2791 KDS",
+			Tipe: "Mobil",
+			Rute: []string{"TB Simatupang", "Panglima Polim", "Depok", "Senen Raya"},
+		},
+		{
+			Nama: "Toni",
+			Plat: "B 1212 JBB",
+			Tipe: "Mobil",
+			Rute: []string{"Pintu Besar Selatan", "Panglima Polim", "Depok", "Senen Raya", "Kemang"},
+		},
+		{
+			Nama: "Stark",
+			Plat: "B 444 XSX",
+			Tipe: "Motor",
+			Rute: []string{"Pondok Indah", "Depok", "Senen Raya", "Kemang"},
+		},
+		{
+			Nama: "Anna",
+			Plat: "B 678 DD",
+			Tipe: "Mobil",
+			Rute: []string{"Fatmawati", "Panglima Polim", "Depok", "Senen Raya", "Kemang", "Gajah Mada"},
+		},
+	}
+
+	JmlPelanggaran := kenaRazia(27, data)
+	for _, v := range JmlPelanggaran {
+		fmt.Printf("{ name: '%s', tilang: %d }\n", v.Name, v.Tilang)
+	}
+}
